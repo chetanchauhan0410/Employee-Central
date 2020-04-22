@@ -1,7 +1,7 @@
 <!--<h2>Employees</h2>-->
     <ul class="employees">
         <li [class.selected]="employee===selectedEmployee" *ngFor="let employee of employees" (click)="onSelect(employee)">
-        <span class="badge">{{employee.id}}</span> <span class="align-top">{{employee.name}}</span>
+        <span class="badge">{{employee.id}}</span> <span class="align-top name">{{employee.name|capitalize}}</span>
       </li>
     </ul>
 

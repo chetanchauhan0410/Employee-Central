@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Routes } from '@angular/router';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeViewComponent } from './employee-view/employee-view.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 //import {RouterTestingMofule}
 
 const routes:Routes=[
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        EmployeesComponent
+        EmployeesComponent,
+        CapitalizePipe
       ],
       imports:[
         RouterTestingModule.withRoutes(routes)

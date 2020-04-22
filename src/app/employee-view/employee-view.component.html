@@ -13,7 +13,7 @@
         <br/>
         <label>
           Name:
-          <input type="text" formControlName="name">
+          <input type="text" formControlName="name" [value]="empProfileForm.get('name').value | capitalize">
         </label>
         <br/>
         <label>

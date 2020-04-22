@@ -14,6 +14,7 @@ import { AuthService } from '../services/auth-service.service';
 import { EmployeesComponent } from '../employees/employees.component';
 import { AppComponent } from '../app.component';
 import { LoginComponent } from './login.component';
+import { CapitalizePipe } from '../pipes/capitalize.pipe';
 
 class MockAuthService { 
   authenticated = false;
@@ -56,7 +57,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent,EmployeesComponent],
+      declarations: [ LoginComponent,EmployeesComponent,CapitalizePipe],
       providers:[{provide:AuthService,useClass:MockAuthService}],
       imports:[ReactiveFormsModule,RouterTestingModule.withRoutes(routes),FormsModule]
     })

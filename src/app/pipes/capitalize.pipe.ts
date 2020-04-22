@@ -6,7 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CapitalizePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return null;
+    let names:string[]=value.split(' ').map((item:string)=>(item)?item[0].toUpperCase() +item.substring(1):'');
+    return names.join(' ');
   }
 
 }

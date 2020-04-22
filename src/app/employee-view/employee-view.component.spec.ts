@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs/observable/of';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { CapitalizePipe } from '../pipes/capitalize.pipe';
 
 describe('EmployeeViewComponent', () => {
   let component: EmployeeViewComponent;
@@ -24,7 +25,7 @@ describe('EmployeeViewComponent', () => {
   };
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmployeeViewComponent ],
+      declarations: [ EmployeeViewComponent,CapitalizePipe],
       providers:[
         { provide: ActivatedRoute, useValue: activatedRouteStub }
     ],
