@@ -1,0 +1,33 @@
+<ng-container *ngIf="currentEmployee">
+   <h2>{{currentEmployee.name}}</h2>
+    <form [formGroup]="empProfileForm">
+        <label>
+            Id: 
+            <input type="text" formControlName="id" disabled>
+        </label> 
+        <br/>
+        <label>
+            Code: 
+            <input type="text" formControlName="code" disabled>
+        </label> 
+        <br/>
+        <label>
+          Name:
+          <input type="text" formControlName="name">
+        </label>
+        <br/>
+        <label>
+          Designation:
+          <input type="text" formControlName="designation">
+        </label>
+        <br/>
+        <button id='updateBtn' (click)="onUpdate()" [disabled]="!empProfileForm.valid" >Update</button>
+      </form>
+
+      <!--<p>
+          Status: {{ empProfileForm.status }}
+        </p>-->
+  </ng-container>
+  <ng-container *ngIf="!currentEmployee">
+      <h2>Employee doesn't exist in system</h2>
+  </ng-container>
