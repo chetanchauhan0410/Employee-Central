@@ -3,25 +3,25 @@
     <form [formGroup]="empProfileForm">
         <label>
             Id: 
-            <input type="text" formControlName="id" disabled>
+            <input id="idInput" type="text" formControlName="id" disabled>
         </label> 
         <br/>
         <label>
             Code: 
-            <input type="text" formControlName="code" disabled>
+            <input id="codeInput" type="text" formControlName="code" disabled>
         </label> 
         <br/>
         <label>
           Name:
-          <input type="text" formControlName="name" [value]="empProfileForm.get('name').value | capitalize">
+          <input id="nameInput" type="text" formControlName="name" [value]="empProfileForm.get('name').value | capitalize">
         </label>
         <br/>
         <label>
           Designation:
-          <input type="text" formControlName="designation">
+          <input id='designationInput' type="text" formControlName="designation">
         </label>
         <br/>
-        <button id='updateBtn' (click)="onUpdate()" [disabled]="!empProfileForm.valid" >Update</button>
+        <button id='updateBtn' (click)="onUpdate()" [disabled]="!empProfileForm.valid" appHoverFocus>Update</button>
       </form>
 
       <!--<p>

@@ -10,6 +10,7 @@ import { EmployeeViewComponent } from './employee-view/employee-view.component';
 import { LoginComponent } from './login/login.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { AuthService } from './services/auth-service.service';
+import { HoverFocusDirective } from './directives/hover-focus.directive';
 
 
 const routes:Routes=[
@@ -27,7 +28,8 @@ const routes:Routes=[
     EmployeesComponent,
     EmployeeViewComponent,
     LoginComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    HoverFocusDirective
   ],
   imports: [
     BrowserModule,
