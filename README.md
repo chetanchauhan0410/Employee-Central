@@ -7,3 +7,5 @@ This is a sample angular application consists of three pages:- login, employee l
 3. Implements Reactive forms (login and employee view).
 4. Form Validations
 5. Uses localstorage for showing and updating employee data.
+
+(Note:- For login use guest credentials 'guest@guestdomain.com' and 'Guest@123')
