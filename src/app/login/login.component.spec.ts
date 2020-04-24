@@ -15,6 +15,7 @@ import { EmployeesComponent } from '../employees/employees.component';
 import { AppComponent } from '../app.component';
 import { LoginComponent } from './login.component';
 import { CapitalizePipe } from '../pipes/capitalize.pipe';
+import { of } from 'rxjs/observable/of';
 
 class MockAuthService { 
   authenticated = false;
@@ -27,6 +28,12 @@ class MockAuthService {
   {
     this.authenticated=value;
   }
+
+  loginApiCall(userObj)
+  {
+    return of({loginStatus:true})
+  }
+
 }
 
 
@@ -239,7 +246,7 @@ describe('LoginComponent', () => {
     submitBtn.nativeElement.click();
 
     fixture.whenStable().then(()=>{
-      expect(localStorage.setItem).toHaveBeenCalledTimes(2);
+      expect(localStorage.setItem).toHaveBeenCalled();
       expect(spy.calls.first().args[0]).toEqual('token');
       expect(spy.calls.mostRecent().args[0]).toEqual('employeelist');
     });
@@ -256,6 +263,22 @@ describe('LoginComponent', () => {
     
     fixture.whenStable().then(()=>{
      expect(router.navigate).toHaveBeenCalledWith(['employees']);
+    });
+
+  }));
+
+  it('should show alert if mockservice returns false',async(()=>{
+    spyOn(service,'loginApiCall').and.returnValue(of({loginStatus:false}));
+    spyOn(window,'alert');
+    userInput.setValue('chetan.chauhan@gmail.com')
+    pwdInput.setValue('123456');
+
+    fixture.detectChanges();
+
+    submitBtn.nativeElement.click();
+    
+    fixture.whenStable().then(()=>{
+      expect(window.alert).toHaveBeenCalled();
     });
 
   }));

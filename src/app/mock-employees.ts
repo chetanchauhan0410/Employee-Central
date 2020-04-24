@@ -19,5 +19,8 @@ export const EMPLOYEES: Employee[] = [
 ]
 
 export const USERS=[
- {username:"chetan.chauhan@globallogic.com",password:"Chetan@123"}
+ {username:"chetan.chauhan@globallogic.com",password:"Chetan@123"},
+ {username:"guest@guestdomain.com",password:"Guest@123"}
 ];
+
+export const URLS={login:'http://localhost:3000/login'};

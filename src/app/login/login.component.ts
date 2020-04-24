@@ -28,10 +28,29 @@ export class LoginComponent implements OnInit {
 
   onSubmit()
   {
+    let loginSuccess;
     let user=this.loginForm.get('user').value.toLowerCase();
     let pwd=this.loginForm.get('password').value;
-    let loginSuccess=this.usersList.find((item)=>(item.username==user)&&(item.password==pwd));
-    if(loginSuccess)
+    let payload={username:user,password:pwd};
+    this.auth.loginApiCall(payload).subscribe((res)=>{
+      loginSuccess=(res['loginStatus'])?true:false;
+      this.login(loginSuccess);
+    },(err)=>
+    {
+      console.error('backend not running. Authenticating locally');
+      loginSuccess=this.usersList.find((item)=>(item.username==user)&&(item.password==pwd));
+      this.login(loginSuccess);
+    }
+    );
+  }
+
+  needsLogin() {
+    return !this.auth.isAuthenticated();
+  }
+  
+  login(loginFlag:boolean)
+  {
+    if(loginFlag)
     {
       localStorage.setItem('token','loggedIn');
       localStorage.setItem('employeelist',JSON.stringify(EMPLOYEES));
@@ -42,9 +61,4 @@ export class LoginComponent implements OnInit {
       alert("invalid user/password");
     }
   }
-
-  needsLogin() {
-    return !this.auth.isAuthenticated();
-  }
-
 }
