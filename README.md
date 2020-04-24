@@ -9,7 +9,9 @@ This is a sample angular application consists of three pages:- login, employee l
 5. Uses localstorage for showing and updating employee data.
 
 ## Get Started
-1. After cloning or downloading code. Install required packages by :- 
+1. Install node js and angular (5 or above recommended).
+2. After cloning or downloading code. Install required packages by :- 
   > npm install
-2. Run command > ng serve
-3. For login use guest credentials 'guest@guestdomain.com' and 'Guest@123'
+3. Run command 
+  > ng serve
+4. For login use guest credentials 'guest@guestdomain.com' and 'Guest@123'
