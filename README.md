@@ -8,4 +8,8 @@ This is a sample angular application consists of three pages:- login, employee l
 4. Form Validations
 5. Uses localstorage for showing and updating employee data.
 
-(Note:- For login use guest credentials 'guest@guestdomain.com' and 'Guest@123')
+## Get Started
+1. After cloning or downloading code. Install required packages by :- 
+  > npm install
+2. Run command > ng serve
+3. For login use guest credentials 'guest@guestdomain.com' and 'Guest@123'
